@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms'; // <--- JavaScript import from Ang
 export class AppComponent {
   currentItem = { name: 'teapot' };
   clickMessage = '';
-  t = '';
 
   onSave(event?: MouseEvent) {
     const evtMsg = event
