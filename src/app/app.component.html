@@ -17,9 +17,11 @@
   <h3>$event and event handling statements</h3>
   <h4>Result: {{ currentItem.name }}</h4>
 
-  <!--<input [value]="currentItem.name"
-         (input)="currentItem.name=getValue($event)">-->
-  <input [(ngModel)]="currentItem.name" />
+  <!-- <input
+    [value]="currentItem.name"
+    (input)="currentItem.name = getValue($event)"
+  /> -->
+    <input [(ngModel)]="currentItem.name" name="name"/>{{currentItem.name}}
   without NgModel
 </div>
 

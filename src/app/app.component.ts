@@ -1,20 +1,25 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Item } from './item';
+import { FormsModule } from '@angular/forms'; // <--- JavaScript import from Angular
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-
-  currentItem = { name: 'teapot'} ;
+  currentItem = { name: 'teapot' };
   clickMessage = '';
+  t = '';
 
   onSave(event?: MouseEvent) {
-    const evtMsg = event ? ' Event target is ' + (event.target as HTMLElement).textContent : '';
+    const evtMsg = event
+      ? ' Event target is ' + (event.target as HTMLElement).textContent
+      : '';
     alert('Saved.' + evtMsg);
-    if (event) { event.stopPropagation(); }
+    if (event) {
+      event.stopPropagation();
+    }
   }
 
   deleteItem(item: Item) {
@@ -22,7 +27,9 @@ export class AppComponent {
   }
 
   onClickMe(event?: MouseEvent) {
-    const evtMsg = event ? ' Event target class is ' + (event.target as HTMLElement).className  : '';
+    const evtMsg = event
+      ? ' Event target class is ' + (event.target as HTMLElement).className
+      : '';
     alert('Click me.' + evtMsg);
   }
 
@@ -30,7 +37,6 @@ export class AppComponent {
     return (event.target as HTMLInputElement).value;
   }
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.
